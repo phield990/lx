@@ -1,12 +1,45 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 
 <head>
-    <meta charset="UTF-8" />
-    <title>徒步驴友交流协会 - 传送门</title>
+    <title>驴协 - 发布页</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,
+           initial-scale=1.0,
+           maximum-scale=1.0,
+           user-scalable=no,
+           viewport-fit=cover" />
     <style>
+        @keyframes fade_in {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        * {
+            font-family: "微软雅黑";
+        }
+
+        html,
         body {
+            animation-name: fade_in;
+            animation-duration: 0.75s;
             margin: 0;
+            padding-left: 3%;
+            padding-right: 3%;
+            height: 100%;
+        }
+
+        .box {
+            border-radius: 0.5em;
+            text-align: center;
+            border: 1px solid rgba(0, 0, 0, 1);
+            margin: 1em 1em 1em 1em;
             padding-left: 1em;
             padding-right: 1em;
         }
@@ -14,21 +47,51 @@
 </head>
 
 <body>
-    <h1>徒步驴友交流协会 - 传送门【ECN - Portal】</h1>
-    <hr>
-    <p>
-        进入主站👉：<a id="link" target="_blank"></a>&emsp;<i>※一般情况下此链接每24小时最多失效约30分钟</i>
-    </p>
-    <p>
-        主站地址上次更新于：<span id="lstUpdt"></span>
-    </p>
-    <script src="url.js"></script>
+    <div style="display: flex;height: 100%;flex-direction: column;justify-content: center;">
+        <div>
+            <div class="box">
+                <h1>驴协 - 发布页</h1>
+                <p>Project LX - Release Page</p>
+            </svg>
+            </div>
+            <div class="box">
+                <p>
+                    <主站链接>
+                        <p>
+                            <a id="link">http://1aeec862.r39.cpolar.top/</a>
+                        </p>
+                </p>
+                <hr />
+                <p>
+                    <上次更新>
+                        <p id="lastest">
+                            Mon Jun 15 2026 23:51:09 GMT+0800 (中国标准时间)
+                        </p>
+                </p>
+                <hr />
+                <p>
+                    （链接失效？）
+                <p>
+                    （非常抱歉；可能的原因为新地址尚未同步，请于链接更新后再试）
+                </p>
+                </p>
+                <hr />
+                <P>
+                    · · · · · ·
+                </P>
+            </div>
+            <div class="box">
+                <p>
+                    Copyright © 2026 'Project LX' All Rights Reserved.
+                </p>
+            </div>
+        </div>
+    </div>
+    <script src="static/js/main.js"></script>
     <script>
-        var link = document.getElementById('link');
-        link.innerHTML = url;
-        link.href = url;
-        var lstUpdt = document.getElementById('lstUpdt');
-        lstUpdt.innerHTML = lastTime;
+        link.innerHTML = JSON.parse(str)[0];
+        link.href = link.innerHTML
+        lastest.innerHTML = JSON.parse(str)[1];
     </script>
 </body>
 
