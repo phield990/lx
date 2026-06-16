@@ -1,6 +1,5 @@
 <!doctype html>
-<html>
-
+<html lang="zh-CN">
 <head>
     <title>驴协 - 发布页</title>
     <meta charset="utf-8" />
@@ -10,89 +9,282 @@
            user-scalable=no,
            viewport-fit=cover" />
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-page: #f7f8fa;
+            --card-bg: #ffffff;
+            --text-dark: #222222;
+            --text-normal: #555555;
+            --text-light: #888888;
+            --border: #e5e7eb;
+            --radius: 12px;
+        }
+
         @keyframes fade_in {
             from {
                 opacity: 0;
-                transform: translateY(-10px);
+                transform: translateY(-20px);
             }
-
             to {
                 opacity: 1;
+                transform: translateY(0);
             }
         }
 
-        * {
-            font-family: "微软雅黑";
+        #particles-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: var(--bg-page);
+            z-index: -1;
         }
 
         html,
         body {
-            animation-name: fade_in;
-            animation-duration: 0.75s;
-            margin: 0;
-            padding-left: 3%;
-            padding-right: 3%;
-            height: 100%;
+            min-height: 100vh;
+            font-family: "Microsoft YaHei", sans-serif;
+            color: var(--text-normal);
+            overflow-x: hidden;
         }
 
-        .box {
-            border-radius: 0.5em;
+        .container {
+            animation: fade_in 0.8s;
+            max-width: 520px;
+            margin: 0 auto;
+            padding: 30px 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px 22px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            border-color: #d1d5db;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .title-card {
             text-align: center;
-            border: 2px solid rgba(0, 0, 0, 1);
-            margin: 1em 1em 1em 1em;
-            padding-left: 1em;
-            padding-right: 1em;
+            background: #fafbfc;
+        }
+
+        .title-card h1 {
+            font-size: 24px;
+            color: var(--text-dark);
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .title-card p {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        .info-item {
+            margin-bottom: 22px;
+            padding-bottom: 22px;
+            border-bottom: 1px dashed var(--border);
+        }
+
+        .info-item:last-of-type {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .label {
+            display: block;
+            font-size: 13px;
+            color: var(--text-light);
+            margin-bottom: 6px;
+        }
+
+        .link-wrapper {
+            display: flex;
+        }
+
+        #link {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-size: 15px;
+            word-break: break-all;
+            transition: color 0.2s;
+        }
+
+        #link:hover {
+            color: #000000;
+            text-decoration: underline;
+        }
+
+        #lastest {
+            font-size: 14px;
+            color: var(--text-normal);
+        }
+
+        .tips {
+            font-size: 13px;
+            color: var(--text-light);
+            margin-top: 6px;
+            line-height: 1.6;
+        }
+
+        .content-card > p {
+            text-align: center;
+            color: var(--text-light);
+            margin-top: 10px;
+            letter-spacing: 4px;
+        }
+
+        .copyright-card {
+            text-align: center;
+            font-size: 12px;
+            color: var(--text-light);
+        }
+
+        @media (max-width: 420px) {
+            .card {
+                padding: 20px 16px;
+            }
+            .title-card h1 {
+                font-size: 21px;
+            }
         }
     </style>
 </head>
 
 <body>
-    <div style="display: flex;height: 100%;flex-direction: column;justify-content: center;">
-        <div>
-            <div class="box">
-                <h1>驴协 - 发布页</h1>
-                <p>Project LX - Release Page</p>
-            </svg>
+    <canvas id="particles-canvas"></canvas>
+
+    <div class="container">
+        <div class="card title-card">
+            <h1>驴协 - 发布页</h1>
+            <p>Project LX - Release Page</p>
+        </div>
+
+        <div class="card content-card">
+            <div class="info-item">
+                <span class="label">主站链接</span>
+                <div class="link-wrapper">
+                    <a id="link" href="http://1aeec862.r39.cpolar.top/">http://1aeec862.r39.cpolar.top/</a>
+                </div>
             </div>
-            <div class="box">
-                <p>
-                    <主站链接>
-                        <p>
-                            <a id="link">http://1aeec862.r39.cpolar.top/</a>
-                        </p>
-                </p>
-                <hr />
-                <p>
-                    <上次更新>
-                        <p id="lastest">
-                            Mon Jun 15 2026 23:51:09 GMT+0800 (中国标准时间)
-                        </p>
-                </p>
-                <hr />
-                <p>
-                    （链接失效？）
-                <p>
-                    （非常抱歉；可能的原因为新地址尚未同步，请于链接更新后再试）
-                </p>
-                </p>
-                <hr />
-                <P>
-                    · · · · · ·
-                </P>
+
+            <div class="info-item">
+                <span class="label">上次更新</span>
+                <p id="lastest">Mon Jun 15 2026 23:51:09 GMT+0800 (中国标准时间)</p>
             </div>
-            <div class="box">
-                <p>
-                    Copyright © 2026 'Project LX' All Rights Reserved.
-                </p>
+
+            <div class="info-item">
+                <p class="tips">（链接失效？）</p>
+                <p class="tips">（非常抱歉；可能的原因为新地址尚未同步，请于链接更新后再试）</p>
             </div>
+
+            <p style="text-align: center; color: var(--text-soft);">· · · · · ·</p>
+        </div>
+
+        <div class="card copyright-card">
+            <p>Copyright © 2026 'Project LX' All Rights Reserved.</p>
         </div>
     </div>
+
+    <script>
+        (function(){
+            const canvas = document.getElementById('particles-canvas');
+            const ctx = canvas.getContext('2d');
+            let w, h, particles = [];
+            const particleNum = 60;
+
+            function resize(){
+                w = canvas.width = window.innerWidth;
+                h = canvas.height = window.innerHeight;
+            }
+            resize();
+            window.addEventListener('resize', resize);
+
+            class Particle {
+                constructor(){
+                    this.x = Math.random() * w;
+                    this.y = Math.random() * h;
+                    this.r = Math.random() * 1.5 + 0.5;
+                    this.speedX = (Math.random() - 0.5) * 0.8;
+                    this.speedY = (Math.random() - 0.5) * 0.8;
+                }
+                update(){
+                    this.x += this.speedX;
+                    this.y += this.speedY;
+                    if(this.x < 0 || this.x > w) this.speedX *= -1;
+                    if(this.y < 0 || this.y > h) this.speedY *= -1;
+                }
+                draw(){
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+                    ctx.fillStyle = 'rgba(80,80,80,0.35)';
+                    ctx.fill();
+                }
+            }
+
+            for(let i = 0; i < particleNum; i++){
+                particles.push(new Particle());
+            }
+
+            function drawLine(p1, p2){
+                const dx = p1.x - p2.x;
+                const dy = p1.y - p2.y;
+                const dist = Math.sqrt(dx*dx + dy*dy);
+                if(dist < 120){
+                    ctx.beginPath();
+                    ctx.moveTo(p1.x, p1.y);
+                    ctx.lineTo(p2.x, p2.y);
+                    ctx.strokeStyle = `rgba(120,120,120,${(120-dist)/400})`;
+                    ctx.lineWidth = 0.5;
+                    ctx.stroke();
+                }
+            }
+
+            function animate(){
+                ctx.clearRect(0, 0, w, h);
+                for(let i = 0; i < particles.length; i++){
+                    particles[i].update();
+                    particles[i].draw();
+                    for(let j = i+1; j < particles.length; j++){
+                        drawLine(particles[i], particles[j]);
+                    }
+                }
+                requestAnimationFrame(animate);
+            }
+            animate();
+        })();
+    </script>
+
     <script src="static/js/main.js"></script>
     <script>
-        link.innerHTML = res[0];
-        link.href = link.innerHTML
-        lastest.innerHTML = res[1];
+        document.addEventListener('DOMContentLoaded', function() {
+            const linkEl = document.getElementById('link');
+            const lastestEl = document.getElementById('lastest');
+            
+            if (typeof res !== 'undefined' && res.length >= 2) {
+                linkEl.textContent = res[0];
+                linkEl.href = res[0];
+                lastestEl.textContent = res[1];
+            }
+        });
     </script>
 </body>
-
 </html>
