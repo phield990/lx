@@ -101,6 +101,7 @@
             margin-bottom: 22px;
             padding-bottom: 22px;
             border-bottom: 1px dashed var(--border);
+            text-align: center;
         }
 
         .info-item:last-of-type {
@@ -118,6 +119,7 @@
 
         .link-wrapper {
             display: flex;
+            justify-content: center;
         }
 
         #link {
@@ -280,7 +282,7 @@
             const lastestEl = document.getElementById('lastest');
             
             if (typeof res !== 'undefined' && res.length >= 2) {
-                linkEl.textContent = res[0];
+                linkEl.textContent = '🔗' + res[0];
                 linkEl.href = res[0];
                 lastestEl.textContent = res[1];
             }
