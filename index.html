@@ -184,7 +184,7 @@
             <div class="info-item">
                 <span class="label">主站链接</span>
                 <div class="link-wrapper">
-                    <a id="link" target="_blank">Loading...</a>
+                    🔗<a id="link" target="_blank">Loading...</a>
                 </div>
             </div>
 
@@ -282,7 +282,7 @@
             const lastestEl = document.getElementById('lastest');
             
             if (typeof res !== 'undefined' && res.length >= 2) {
-                linkEl.textContent = '🔗' + res[0];
+                linkEl.textContent = res[0];
                 linkEl.href = res[0];
                 lastestEl.textContent = res[1];
             }
