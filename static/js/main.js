@@ -1,1 +1,1 @@
-let res = ["https://572c86b6.r39.cpolar.top","Thu Jun 25 2026 11:10:02 GMT+0800 (中国标准时间)"]
+let res = ["https://1ea1511.r39.cpolar.top","Sat Jun 27 2026 08:42:28 GMT+0800 (中国标准时间)"]
